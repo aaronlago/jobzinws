@@ -1,34 +1,44 @@
 REST API em Node.js e Express.js - Cadastro e manipulação de planetas.
 
-Desafio Técnico, Desenvolver uma aplicação Node REST API, consumindo uma SWAPI(The Star Wars API), com as seguintes funcionalidade:
-Listar, adicionar e remover planetas;
-Buscar por nome e Id;
-Consultar o número de aparições em filmes, do planeta existente.
+
+Desafio Técnico, desenvolver uma aplicação Node REST API, consumindo uma SWAPI(The Star Wars API), com as seguintes funcionalidade:
+
+•	Listar, adicionar e remover planetas;
+•	Buscar por nome e Id;
+•	Consultar o número de aparições em filmes, do planeta existente.
 
 Guia
-Colnar o repositório do projeto: 
+
+Clonar o repositório do projeto: 
+
 git clone https://github.com/aaronlago/jobzinws.git
 
 Instalar as dependência:
+
 npm install
 
 Iniciar a aplicação:
+
 nodemon .bin/server
 
 Arquitetura REST
 
 Adicionar Planeta - POST: http://localhost:300/planeta/create
 
-. Requisito para realizar o post, inserir o nome, clima e terreno;
-. O id sera gerado automaticamente;
-. O número de aparições é gerado ao consmir os dados da API.
+•	Requisito para realizar o post, inserir o nome, clima e terreno;
+•	O id sera gerado automaticamente;
+•	O número de aparições é gerado ao consmir os dados da API.
+
 EXEMPLO POST : /create
+
 {
   "name": "Alderaan",
   "climate": "temperate",
   "terrain": "grasslands, mountains"
 }
-Obtem resposta:
+
+Resposta:
+
 {
     "result": {
         "planet": {
@@ -46,8 +56,10 @@ Obtem resposta:
 
 Listar todos os planetas  - GET : http://localhost:3000/planeta/list
 
-. Retorna todos os planetas já cadastrados no banco de dados, cada planeta no formato JSON, conforme o model Schema.
+•	Retorna todos os planetas já cadastrados no banco de dados, cada planeta no formato JSON, conforme o model Schema.
+
 EXEMPLO GET : /list
+
 {
     "result": {
         "planets": [
@@ -106,8 +118,10 @@ EXEMPLO GET : /list
 
 Buscar planeta por Nome - GET : http://localhost:3000/planeta/find/name/{inserir-nome-aqui}
 
-. O nome do planeta cadastrado é adicionado ao bando de dados, retornando um JSON com sucesso.
+•	O nome do planeta cadastrado é adicionado ao bando de dados, retornando um JSON com sucesso.
+
 EXEMPLO GET : /find/name/Alderaan
+
 {
     "result": {
         "planet": {
@@ -125,9 +139,10 @@ EXEMPLO GET : /find/name/Alderaan
 
 Buscar planeta por Id - GET : http://localhost:3000/planeta/find/id/{inserir-id-aqui}
 
-. O Id gerado automaticamente quando a requisição e feita com sucesso é adicionado ao bando de dados, retornando um JSON.
+•	.O Id gerado automaticamente quando a requisição e feita com sucesso é adicionado ao bando de dados, retornando um JSON.
 
 Exemplo GET : find/id/5d261d07d2ed3b5bffdadfa2
+
 Resposta: 
 {
     "result": {
@@ -146,8 +161,11 @@ Resposta:
 
 Deletar Planeta - DELETE : http://localhost:300/planeta/delete/id
 
-. Remove o planeta pelo id cadastrado no bando de dados
+•	Remove o planeta pelo id cadastrado no bando de dados
+
 EXEMPLO DELETE : delete/5d2631990274cf5e04fbb8e9
+
 {
 	"result": "Estrela da morte passou por aqui... planeta removido com sucesso"
 }
+
