@@ -14,7 +14,7 @@ const getPlanets = async (url, planets) => {
 	
 }
 
-//Adiciona um planeta conforme model
+//Adiciona planeta conforme model
 exports.addPlanet = async(req, res) => {
 		try {
 			const { name, climate, terrain } = req.body;
@@ -50,7 +50,7 @@ exports.addPlanet = async(req, res) => {
         }
 }
 
-// Busca o planeta solicitado
+// Busca pelo o nome
 exports.findByName = async(req, res) => {
 		try {
 			const {name} = req.params;
@@ -72,7 +72,7 @@ exports.findByName = async(req, res) => {
     }
 }
 
-// Busca pelo o id solicitado
+// Busca pelo o id 
 exports.findById = async(req, res) => {
 		try {
 			const { id } = req.params;
