@@ -8,7 +8,9 @@ const app = express();
 const router = express.Router();
 
 // Conecta ao banco
-mongoose.connect('mongodb+srv://aarondb:1234567890@cluster0-hajvg.mongodb.net/test?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://aarondb:1234567890@cluster0-hajvg.mongodb.net/test?retryWrites=true&w=majority', {
+  useNewUrlParser: true
+});
 
 // Carregar os Models
 const Planet = require('./models/planets');
